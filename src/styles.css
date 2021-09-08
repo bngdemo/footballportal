@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --main: #2e5fe2;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.text-main {
+    color: var(--main);
+}
+
+.owl-carousel .owl-item img {
+    width: 84px;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    margin    : 5px;
+    background: rgba(248, 129, 158, .5);
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: rgb(248, 129, 158);
+}
+
+.nav-header {
+    position  : sticky;
+    top       : 0;
+    left      : 0;
+    width     : 100%;
+    background: #fff;
+    z-index   : 10;
+}
+
+.nav-footer {
+    position  : sticky;
+    bottom    : 0;
+    left      : 0;
+    width     : 100%;
+    background: #fff;
+    border-top: 2px solid var(--main);
+    z-index   : 10;
+}

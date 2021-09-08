@@ -1,0 +1,9 @@
+.router-wrapper {
+    position  : relative;
+    display   : block;
+    margin    : 0 auto;
+    height    : 100%;
+    width     : 100%;
+    max-width : 500px;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+}

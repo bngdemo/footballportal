@@ -1,0 +1,25 @@
+.bg-header {
+    background-image         : url(/assets/img/header_bg.png);
+    background-size          : cover;
+    background-repeat        : no-repeat;
+    background-position      : center;
+    border-bottom-left-radius: 1.5rem;
+}
+
+.progress {
+    width           : 50%;
+    height          : 6px;
+    background-color: rgb(255 255 255 / 40%);
+}
+
+.point {
+    flex         : 0 0 auto;
+    width        : 10px;
+    height       : 10px;
+    border-radius: 50%;
+    background   : rgba(0, 0, 0, .5);
+}
+
+.bg-highlight {
+    background: rgb(253 164 0);
+}
