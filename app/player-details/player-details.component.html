@@ -1,0 +1,56 @@
+<header class="bg-header">
+    <nav class="container py-3 d-flex align-items-center flex-row-reverse">
+        <img (click)="goBackPage()" src="assets/icons/back_arrow.png" alt="back" width="30" height="30">
+        <div class="text-light h5 mb-0 me-2 fw-bold">{{player?.name}}</div>
+    </nav>
+    <section class="container">
+        <div class="row g-0">
+            <div class="col-6 d-flex flex-column justify-content-end">
+                <div class="h5 fw-bold text-light">{{player?.tagline}}</div>
+                <div class="progress my-4">
+                    <div class="progress-bar bg-light w-50" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <img class="img-fluid" [src]="player?.profile" [alt]="player?.name">
+            </div>
+        </div>
+    </section>
+</header>
+<main class="">
+    <div class="container bg-white py-3">
+        <p class="text-end">{{player?.description}}</p>
+    </div>
+    <div class="my-2"></div>
+    <div class="container bg-white py-3">
+        <div class="h5 fw-bold text-uppercase text-end">شرف شخصي</div>
+        <div class="honor-list">
+            <div class="d-flex align-items-baseline flex-row-reverse mb-2" *ngFor="let honor of player?.honors">
+                <div class="point bg-highlight ms-2"></div>
+                <div>{{honor}}</div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="nav-footer">
+    <ul class="nav justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/home">
+                <img src="assets/icons/nav/matches.png" alt="Matches" width="28">
+                <small class="text-black-50">تحديث المباريات</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link px-1 d-flex flex-column align-items-center" routerLink="/famous-players">
+                <img src="assets/icons/nav/players.png" alt="Players" width="28">
+                <small class="text-black-50">مشاهير اللاعبين</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/history">
+                <img src="assets/icons/nav/history.png" alt="History" width="28">
+                <small class="text-black-50">تاريخ كرة القدم</small>
+            </a>
+        </li>
+    </ul>
+</footer>

@@ -1,0 +1,38 @@
+<header class="nav-header bg-header py-3">
+    <nav class="container d-flex align-items-center flex-row-reverse">
+        <img (click)="goBackPage()" src="assets/icons/back_arrow.png" alt="back" width="30" height="30">
+        <div class="text-light h5 mb-0 me-2 ms-auto fw-bold">تاريخ كرة القدم</div>
+        <img src="assets/icons/search.png" alt="search" width="30" height="30">
+    </nav>
+</header>
+<main class="container py-3">
+    <div class="card video-card mb-3" *ngFor="let video of videos">
+        <video [src]="video.src" controls></video>
+        <div class="card-body">
+            <h5 class="card-title text-light text-end text-truncate">{{video.title}}</h5>
+            <p class="card-text text-light text-end">{{video.description}}</p>
+        </div>
+    </div>
+</main>
+<footer class="nav-footer">
+    <ul class="nav justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/home">
+                <img src="assets/icons/nav/matches.png" alt="Matches" width="28">
+                <small class="text-black-50">تحديث المباريات</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link px-1 d-flex flex-column align-items-center" routerLink="/famous-players">
+                <img src="assets/icons/nav/players.png" alt="Players" width="28">
+                <small class="text-black-50">مشاهير اللاعبين</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/history">
+                <img src="assets/icons/nav/history_active.png" alt="History" width="28">
+                <small class="text-main fw-bold">تاريخ كرة القدم</small>
+            </a>
+        </li>
+    </ul>
+</footer>

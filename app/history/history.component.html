@@ -1,0 +1,84 @@
+<header class="nav-header bg-header py-3">
+    <nav class="container d-flex align-items-center">
+        <img (click)="goBackPage()" src="assets/icons/back_arrow.png" alt="back" width="30" height="30">
+        <div class="text-light h5 mb-0 ms-2 fw-bold">تاريخ كرة القدم</div>
+        <img src="assets/icons/search.png" alt="search" class="ms-auto" width="30" height="30">
+    </nav>
+</header>
+<main class="container py-3">
+    <section class="pb-3">
+        <owl-carousel [options]="featuredNewsSlideOptions" [carouselClasses]="['owl-theme', 'sliding']">
+            <div class="container featured-news" [ngStyle]="{'background-image': 'url(' + news.promImgUrl + ')'}" *ngFor="let news of featuredNews">
+                <div class="text-uppercase h4">
+                    <span class="badge bg-warning">{{news.badge}}</span>
+                </div>
+                <div class="card">
+                    <div class="card-body p-1">
+                        <div class="card-title fw-bold text-light text-truncate">{{news.headline}}</div>
+                        <div class="d-flex justify-content-between">
+                            <div class="text-info">Football</div>
+                            <div class="text-light" style="opacity: .75;">{{news.date}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </owl-carousel>
+    </section>
+    <section class="py-3">
+        <div class="h4 fw-bold text-secondary">Top News</div>
+        <owl-carousel [options]="topNewsSlideOptions" [carouselClasses]="['owl-theme', 'sliding']">
+            <div class="top-news" [ngStyle]="{'background-image': 'url(' + news.promImgUrl + ')'}" *ngFor="let news of topNews">
+                <div class="card">
+                    <div class="card-body p-1">
+                        <div class="card-title fw-bold text-light">{{news.headline}}</div>
+                        <div class="text-info">Football</div>
+                        <div class="text-light" style="opacity: .75;">{{news.date}}</div>
+                    </div>
+                </div>
+            </div>
+        </owl-carousel>
+    </section>
+    <section class="pt-3">
+        <div class="h4 fw-bold text-secondary">Published News</div>
+        <div class="published-news" *ngFor="let news of publishedNews">
+            <div class="card mb-1 bg-transparent border-0" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-3">
+                        <img [src]="news.promImgUrl" class="img-fluid" style="border-radius: .75rem;">
+                    </div>
+                    <div class="col-9">
+                        <div class="card-body">
+                            <div class="card-title fw-bold">{{news.headline}}</div>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-info">Football</div>
+                                <div class="text-black-50">{{news.date}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="nav-footer">
+    <ul class="nav justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/home">
+                <img src="assets/icons/nav/matches.png" alt="Matches" width="28">
+                <small class="text-black-50">تحديث المباريات</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link px-1 d-flex flex-column align-items-center" routerLink="/famous-players">
+                <img src="assets/icons/nav/players.png" alt="Players" width="28">
+                <small class="text-black-50">مشاهير اللاعبين</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/history">
+                <img src="assets/icons/nav/history_active.png" alt="History" width="28">
+                <small class="text-main fw-bold">تاريخ كرة القدم</small>
+            </a>
+        </li>
+    </ul>
+</footer>

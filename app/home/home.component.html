@@ -1,0 +1,91 @@
+<header class="bg-header py-3">
+    <nav class="container d-flex align-items-center flex-row-reverse">
+        <img src="assets/icons/menu.png" alt="menu" width="30" height="30">
+        <div class="text-light h5 mb-0 ms-auto me-2 fw-bold">مباريات كرة قدم</div>
+        <img src="assets/icons/search.png" alt="search" width="30" height="30">
+    </nav>
+    <owl-carousel [options]="slideOptions" [carouselClasses]="['owl-theme', 'mt-4', 'sliding']">
+        <div class="container slider rounded-3" [ngStyle]="{'background-image': 'url(' + slider.backgroundImage + ')'}" *ngFor="let slider of sliders;">
+            <div class="position-absolute label" style="right:0">
+                <span class="dot"></span>
+                <span class="text-light small mx-1 fw-bold">جاري التشغيل</span>
+            </div>
+            <div class="row align-items-center h-100">
+                <div class="col-4 text-center">
+                    <img [src]="slider?.teamA?.flag" [alt]="slider?.teamA?.name" class="mb-2 mx-auto">
+                    <div class="text-light fw-bold text-uppercase">{{slider?.teamA?.name}}</div>
+                </div>
+                <div class="col-4 text-center">
+                    <div class="display-5 mb-3 text-light fw-bold">
+                        <span>{{slider?.teamA?.score}}</span>
+                        <span> - </span>
+                        <span>{{slider?.teamB?.score}}</span>
+                    </div>
+                    <div class="text-light fw-bold small">{{slider?.group}}</div>
+                </div>
+                <div class="col-4 text-center">
+                    <img [src]="slider?.teamB?.flag" [alt]="slider?.teamB?.name" class="mb-2 mx-auto">
+                    <div class="text-light fw-bold text-uppercase">{{slider?.teamB?.name}}</div>
+                </div>
+            </div>
+            <div class="position-absolute stadium">
+                <span class="text-light small">{{slider?.stadium}}</span>
+            </div>
+        </div>
+    </owl-carousel>
+</header>
+<main class="container">
+    <div class="card border-0 shadow-sm mb-3" *ngFor="let game of games">
+        <div class="d-flex justify-content-between px-3 py-2 border-bottom">
+            <img src="assets/icons/next_arrow.png" alt="next" width="25" height="25">
+            <div class="fw-bold" style="color: #033277;">{{game?.match}}</div>
+        </div>
+        <div class="card-body px-3 pt-2 pb-3">
+            <div class="row align-items-center h-100 g-2">
+                <div class="col-4 text-start">
+                    <div class="small mb-3">{{game?.location}}</div>
+                    <div class="d-flex align-items-center mb-4">
+                        <img [src]="game?.teamA?.flag" [alt]="game?.teamA?.name" width="64">
+                        <div class="fw-bold text-uppercase mx-2">{{game?.teamA?.name}}</div>
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <div class="small fw-bold mb-3" style="color: #033277;">{{game?.daysLeft}}</div>
+                    <img class="mb-4" src="assets/icons/match_vs.png" alt="vs" width="80">
+                </div>
+                <div class="col-4 text-end">
+                    <div class="small mb-3">{{game?.date}}</div>
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="fw-bold text-uppercase mx-2">{{game?.teamB?.name}}</div>
+                        <img [src]="game?.teamB?.flag" [alt]="game?.teamB?.name" width="64">
+                    </div>
+                </div>
+            </div>
+            <div class="position-absolute stadium">
+                <span class="text-light small">{{game?.stadium}}</span>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="nav-footer">
+    <ul class="nav justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/home">
+                <img src="assets/icons/nav/matches_active.png" alt="Matches" width="28">
+                <small class="text-main fw-bold">تحديث المباريات</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link px-1 d-flex flex-column align-items-center" routerLink="/famous-players">
+                <img src="assets/icons/nav/players.png" alt="Players" width="28">
+                <small class="text-black-50">مشاهير اللاعبين</small>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link d-flex flex-column align-items-center" routerLink="/history">
+                <img src="assets/icons/nav/history.png" alt="History" width="28">
+                <small class="text-black-50">تاريخ كرة القدم</small>
+            </a>
+        </li>
+    </ul>
+</footer>

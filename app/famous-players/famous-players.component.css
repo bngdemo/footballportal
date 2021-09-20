@@ -1,0 +1,10 @@
+.bg-header {
+    background-image   : url(/assets/img/header_bg.png);
+    background-size    : cover;
+    background-repeat  : no-repeat;
+    background-position: center;
+}
+
+.player-card {
+    border-radius: 1rem;
+}
