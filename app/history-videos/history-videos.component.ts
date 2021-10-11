@@ -12,7 +12,7 @@ export class HistoryVideosComponent implements OnInit {
     {
       title: 'أريد أن أتناول العشاء مع ميسي',
       description: 'جلس كريستيانو رونالدو وليونيل ميسي بجانب بعضهما البعض',
-      src: 'assets/videos/1_p.mp4',
+      src:"https://a.uguu.se/mgKizORe.mp4",
     },
     {
       title: 'أريد أن أتناول العشاء مع ميسي',
